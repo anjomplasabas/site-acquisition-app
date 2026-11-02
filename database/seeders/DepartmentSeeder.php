@@ -1,0 +1,22 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Department;
+use Illuminate\Database\Seeder;
+
+class DepartmentSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $departments = [
+            'Site Acquisition Team',
+            'Infrastructure Team',
+            'Network Team',
+        ];
+
+        foreach ($departments as $name) {
+            Department::firstOrCreate(['name' => $name]);
+        }
+    }
+}
